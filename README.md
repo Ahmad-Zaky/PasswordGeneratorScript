@@ -16,7 +16,6 @@ function generatePassword($length=32) {
     $symbols["special_symbols"] = '!?~@#-_+<>[]{}';
 
     $sPassword = bin2hex(random_bytes(($length)));
-    return $sPassword;
     for ($i=0;$i<($length/2);$i++) {
 
         $rPos = random_int(0, (strlen($sPassword)));
