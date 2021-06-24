@@ -14,7 +14,7 @@ function generatePassword($length=32) {
 
     // Generate Random Strong Password (PHP Version 7.*)
     $symbols["upper_case"] = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    $symbols["special_symbols"] = '!?~@#-_+<>[]{}';
+    $symbols["special_symbols"] = '?~@#-_+[]{}';
 
     $sPassword = bin2hex(random_bytes(($length)));
     for ($i=0;$i<($length/2);$i++) {
