@@ -1,4 +1,4 @@
-# PasswordGeneratorScript
+# Password Generator/Hash/Match Script
 
 Tiny PHP Script to Generate/Hash/Match a Random Password. the Length is always multiplied by 2.
 
