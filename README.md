@@ -1,5 +1,6 @@
 # PasswordGeneratorScript
-Tiny PHP Script to Generate Random Password. the Length is always multiplied by 2.
+
+Tiny PHP Script to Generate/Hash/Match a Random Password. the Length is always multiplied by 2.
 
 ```php
 
@@ -28,5 +29,24 @@ function generatePassword($length=32) {
     }
 
     return $sPassword;
+}
+
+function hashPassword($password)
+{
+    if (empty($password) || gettype($password) !== 'string')
+        return false;
+    
+    return password_hash($password, PASSWORD_DEFAULT);
+}
+
+function matchPassword($password, $hash)
+{
+    if (
+        empty($password) || gettype($password) !== 'string'
+        empty($hash) || gettype($hash) !== 'string'
+    )
+        return false;
+    
+    return password_verify($password, $hash) ? true : false;
 }
 ```
